@@ -1,4 +1,4 @@
-import * as C from "./styles";
+import * as C from "../../styled-components/global";
 import { Input } from "../../components/Input/Input";
 import { Button } from "../../components/Button/Button";
 import { useState } from "react";

@@ -65,9 +65,15 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("user_token");
     };
 
+    const getEmail = () => {
+        const user = JSON.parse(localStorage.getItem("user_token"));
+
+        return user.email;
+    };
+
     return (
         <AuthContext.Provider
-            value={{ user, signed: !!user, signIn, signUp, signOut }}
+            value={{ user, signed: !!user, signIn, signUp, signOut, getEmail }}
         >
             {children}
         </AuthContext.Provider>

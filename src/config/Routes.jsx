@@ -3,11 +3,12 @@ import App from "../App";
 import { Home } from "../pages/Home/Home";
 import { Login } from "../pages/Login/Login";
 import { Signup } from "../pages/Signup/Signup";
+import useAuth from "../hooks/useAuth";
 
 const Private = ({ Item }) => {
-    const signup = false;
+    const { signed } = useAuth();
 
-    return signup ? <Item /> : <Login />;
+    return signed ? <Item /> : <Login />;
 };
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
                 element: <Login />,
             },
             {
-                path: "/Signup",
+                path: "/signup",
                 element: <Signup />,
             },
             {
